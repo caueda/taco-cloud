@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+#tacoImg {
+    width: 10%;
+    height: auto;
+}
+.container {
+    width: 80%;
+    margin: auto;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+button {
+    margin: 0.8em;
+    padding: 0.5em;
+    color: #fff;
+    background-color: coral;
+    border: none;
+    border-radius: 5px;
+}

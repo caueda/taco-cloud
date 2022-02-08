@@ -26,7 +26,8 @@ public class Order {
     private String zip;
     @CreditCardNumber(message="Not a valid credit card number")
     private String ccNumber;
-    @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([1-9][0-9])")
+    @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([1-9][0-9])", message = "No a valid expiration date")
     private String ccExpiration;
+    @Pattern(regexp = "((\\d){3})", message = "No a valid CVV")
     private String ccCVV;
 }

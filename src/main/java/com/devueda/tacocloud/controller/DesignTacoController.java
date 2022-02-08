@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,8 @@ import com.devueda.tacocloud.model.Taco;
 
 
 import lombok.extern.slf4j.Slf4j;
+
+import javax.validation.Valid;
 
 @Slf4j
 @Controller
@@ -52,9 +55,10 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processDesign(Taco design) {
-    // Save the taco design...
-    // We'll do this in chapter 3
+    public String processDesign(@Valid Taco design, Errors errors) {
+        if(errors.hasErrors()) {
+            return "redirect:/design";
+        }
         log.info("Processing design: " + design);
         return "redirect:/orders/current";
     }

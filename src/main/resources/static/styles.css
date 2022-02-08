@@ -29,3 +29,7 @@
     display: block;
     margin-bottom: 0.8em;
 }
+
+.validationError {
+    color: #ff0000;
+}
